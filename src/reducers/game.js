@@ -8,15 +8,15 @@ export default (state = {
       return {
         ...state,
         players: action.players,
-        status: 'RUNNING'
+        status: 'RUN'
       }
-    case 'ADD_CHIP':
+    case 'ADD_CHIP': {
+      let isSet = false;
       return {
         ...state,
         chips: state.chips.map(function(row, rowIndex) {
-          let isSet = false;
           return row.map(function(col, colIndex) {
-            if (colIndex == action.col && !isSet && col !== 0) {
+            if (colIndex === action.col && !isSet && col === 0) {
               isSet = true;
               return action.player;
             } else {
@@ -24,6 +24,7 @@ export default (state = {
             }
           })
         })
+      }
     }
     default:
       return state;

@@ -5,7 +5,7 @@ import Board from './Board';
 
 export const Game = (state) => (
   <div>
-    {state.status==="RUNNING" ? <Board /> : <MainMenu />}
+    {state.status==="RUN" ? <Board /> : <MainMenu />}
   </div>
 );
 
