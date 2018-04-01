@@ -2,13 +2,15 @@ export default (state = {
   players: 1,
   status: "STOP",
   chips: boardSize(10),
+  currentPlayer: 1
 }, action) => {
   switch (action.type) {
     case 'SET_PLAYERS':
       return {
         ...state,
         players: action.players,
-        status: 'RUN'
+        status: 'RUN',
+        currentPlayer: 1
       }
     case 'ADD_CHIP': {
       let isSet = false;
@@ -18,12 +20,13 @@ export default (state = {
           return row.map(function(col, colIndex) {
             if (colIndex === action.col && !isSet && col === 0) {
               isSet = true;
-              return action.player;
+              return state.currentPlayer;
             } else {
               return col;
             }
           })
-        })
+        }),
+        currentPlayer: state.currentPlayer === 1 ? 2 : 1
       }
     }
     default:

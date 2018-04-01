@@ -3,8 +3,7 @@ export const setPlayers = (players) => ({
   players
 });
 
-export const addChip = (player, col) => ({
+export const addChip = (col) => ({
   type: 'ADD_CHIP',
-  player,
   col
 })

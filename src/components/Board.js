@@ -44,7 +44,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  addChip: (col, e) => dispatch(addChip(1, col))
+  addChip: (col, e) => dispatch(addChip(col))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Board);
