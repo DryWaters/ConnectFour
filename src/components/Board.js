@@ -1,37 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addChip } from '../actions/game';
+import { Stage, Layer } from 'react-konva';
 import Chip from './Chip';
 
-export const Board = (props) => (
-  <div>
-    <p>In Board</p>
-    <button value="0" onClick={props.addChip}>Add Chip 0</button>
-    <button value="1" onClick={props.addChip}>Add Chip 1</button>
-    <button value="2" onClick={props.addChip}>Add Chip 2</button>
-    <button value="3" onClick={props.addChip}>Add Chip 3</button>
-    <button value="4" onClick={props.addChip}>Add Chip 4</button>
-    <button value="5" onClick={props.addChip}>Add Chip 5</button>
-    <button value="6" onClick={props.addChip}>Add Chip 6</button>
-    <button value="7" onClick={props.addChip}>Add Chip 7</button>
-    <button value="8" onClick={props.addChip}>Add Chip 8</button>
-    <button value="9" onClick={props.addChip}>Add Chip 9</button>
-    {props.chips.map(function(row, rowIndex) {
-      return row.map(function(col, colIndex) {
-        if (col === 1) {
-          return <Chip key={rowIndex + " " + colIndex} />
-        }
-      })
-    })}
-  </div>
-);
+class Board extends Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <Stage width={window.innerWidth} height={window.innerHeight}>
+        <Layer>
+          {this.props.chips.map((row, rowIndex) => {
+            return row.map((col, colIndex) => {
+              return <Chip key={rowIndex + " " + colIndex} value={col} player={col} x={colIndex * 50+25} y={rowIndex * -50+500} onClick={(e) => this.props.addChip(colIndex, e)}/>
+              });
+            })}
+        </Layer>
+      </Stage>
+    )
+  }
+  
+};
 
 const mapStateToProps = (state) => ({
   chips: state.game.chips
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  addChip: (e) => dispatch(addChip(1, parseInt(e.target.value)))
+  addChip: (col, e) => dispatch(addChip(1, col))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Board);
