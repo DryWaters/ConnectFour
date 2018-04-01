@@ -1,8 +1,8 @@
 Arguments: 
-  D:\Program Files\nodejs\node.exe C:\Users\Daniel\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js test
+  D:\Program Files\nodejs\node.exe C:\Users\Daniel\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js run dev-server
 
 PATH: 
-  C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;D:\Program Files\PuTTY\;D:\Program Files\Maven\bin;D:\Program Files\TortoiseSVN\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\Program Files\nodejs\;d:\Program Files\Git\cmd;C:\Program Files (x86)\Google\Chrome\Application;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\java\Git\cmd;C:\Users\Daniel\AppData\Local\Microsoft\WindowsApps;D:\Program Files\Sublime Text 3;D:\Java\jdk1.8.0_51\bin;C:\Users\Daniel\AppData\Roaming\npm;d:\Program Files\Heroku\bin;C:\Program Files\Microsoft VS Code\bin
+  C:\Users\Daniel\bin;D:\Program Files\Git\mingw64\bin;D:\Program Files\Git\usr\local\bin;D:\Program Files\Git\usr\bin;D:\Program Files\Git\usr\bin;D:\Program Files\Git\mingw64\bin;D:\Program Files\Git\usr\bin;C:\Users\Daniel\bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;D:\Program Files\Git\cmd;D:\Program Files\nodejs;D:\Program Files\Sublime Text 3;D:\Program Files\TortoiseSVN\bin;C:\Program Files\PuTTY;C:\Users\Daniel\AppData\Local\Microsoft\WindowsApps;C:\Users\Daniel\AppData\Roaming\npm;D:\Program Files\Heroku\bin;D:\Program Files\Microsoft VS Code\bin;D:\Program Files\Git\usr\bin\vendor_perl;D:\Program Files\Git\usr\bin\core_perl
 
 Yarn version: 
   1.5.1
@@ -6732,8 +6732,8 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: C:\WINDOWS\system32\cmd.exe
-  Arguments: /d /s /c cross-env NODE_ENV=test jest --config=jest.config.json
-  Directory: D:\Users\Daniel\Desktop\react-course-projects\boilerplate-v2
+  Arguments: /d /s /c webpack-dev-server
+  Directory: D:\Users\Daniel\Desktop\ConnectFour
   Output:
   
       at ProcessTermError.MessageError (C:\Users\Daniel\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
