@@ -9,8 +9,16 @@
   @extend .chip;
   width: 60px;
   height: 60px;
+}
 
+.chip-selector--player1 {
   &:hover {
     @extend .chip--red;
+  }
+}
+
+.chip-selector--player2 {
+  &:hover {
+    @extend .chip--yellow;
   }
 }
