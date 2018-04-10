@@ -1,0 +1,16 @@
+@for $i from 0 to 7 {
+    .select-#{$i} {
+      top: -70px;
+      left: 0px + $i * 60 + 4;
+    }
+}
+
+.chip-selector {
+  @extend .chip;
+  width: 60px;
+  height: 60px;
+
+  &:hover {
+    @extend .chip--red;
+  }
+}

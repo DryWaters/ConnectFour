@@ -1,27 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Chip from './Chip';
+import ChipSelector from './ChipSelector';
+import { connect } from 'react-redux';
 
-const Board = () => (
-
+const Board = (props) => (
   <div className="board">
-    <Chip classes="chip chip--red loc-0-0" />
-    <Chip classes="chip chip--yellow loc-0-1" />
-    <Chip classes="chip chip--red loc-0-2" />
-    <Chip classes="chip chip--yellow loc-0-3" />
-    <Chip classes="chip chip--red loc-0-4" />
-    <Chip classes="chip chip--yellow loc-0-5" />
-    <Chip classes="chip chip--red loc-1-0" />
-    <Chip classes="chip chip--yellow loc-1-1" />
-    <Chip classes="chip chip--red loc-1-2" />
-    <Chip classes="chip chip--yellow loc-1-3" />
-    <Chip classes="chip chip--red loc-1-4" />
-    <Chip classes="chip chip--yellow loc-1-5" />
-    <Chip classes="chip chip--red loc-2-0" />
-    <Chip classes="chip chip--yellow loc-2-1" />
-    <Chip classes="chip chip--red loc-2-2" />
-    <Chip classes="chip chip--yellow loc-2-3" />
+    <ChipSelector col={0} classes="chip-selector select-0" />
+    <ChipSelector col={1} classes="chip-selector select-1" />
+    <ChipSelector col={2} classes="chip-selector select-2" />
+    <ChipSelector col={3} classes="chip-selector select-3" />
+    <ChipSelector col={4} classes="chip-selector select-4" />
+    <ChipSelector col={5} classes="chip-selector select-5" />
+    <ChipSelector col={6} classes="chip-selector select-6" />
+    {props.chips.map((row, rowIndex) => {
+      return row.map((col, colIndex) => {
+        if (col === 1) {
+          return <Chip key={rowIndex + " - " + colIndex} classes={"chip chip--red loc-" + colIndex + "-" + rowIndex} />
+        } else if (col === 2) {
+          return <Chip key={rowIndex + " - " + colIndex} classes={"chip chip--yellow loc-" + colIndex + "-" + rowIndex} />
+        }
+      })
+    })}
   </div>
-
 );
 
-export default Board;
+const mapStateToProps = (state, props) => ({
+  chips: state.game.chips
+});
+
+export default connect(mapStateToProps)(Board);

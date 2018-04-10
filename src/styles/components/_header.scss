@@ -17,7 +17,7 @@
     margin: 0;
     font-size: $xl-size;
     text-shadow: -1px -1px 0 #000, 0px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 0px 1px 0 #000, 1px 1px 0 #000;
-    z-index: 200;
+    z-index: 100;
     position: relative;
   }
 }
@@ -28,17 +28,16 @@
   width: 60px;
   height: 60px;
   z-index: 100;
-
 }
 
-.header__chip__yellow {
+.header__chip--yellow {
   @extend .header__chip;
   left: 330px;
   top: 20px;
   background: radial-gradient(ellipse at center, rgba(255,255,0,1) 0%, rgba(255,255,0,1) 51%, rgba(133,133,0,1) 53%, rgba(133,133,0,1) 56%, rgba(255,255,0,1) 57%, rgba(255,255,0,1) 68%, rgba(133,133,0,1) 70%, rgba(133,133,0,0) 71%);
 }
 
-.header__chip__red {
+.header__chip--red {
   @extend .header__chip;
   left: 370px;
   top: 20px;

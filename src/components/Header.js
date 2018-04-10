@@ -9,8 +9,8 @@ export const Header = ({ startLogout }) => (
     <div className="content-container">
       <div className="header__content">
         <div className="header__title">
-          <Chip classes="header__chip__red"/>
-          <Chip classes="header__chip__yellow"/>
+          <Chip classes="header__chip--red"/>
+          <Chip classes="header__chip--yellow"/>
           <h1>React Connect Four</h1>
         </div>
       </div>

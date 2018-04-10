@@ -1,12 +1,13 @@
 .board {
   position: absolute;
   top: 60px;
-  left: 30px;
+  left: 25px;
   border: 12px solid #007fff;
   border-radius: 30px;
   box-sizing: border-box;
   width: 450px;
   height: 390px;
-  pointer-events: none;
+  // pointer-events: none;
   background: radial-gradient(ellipse at center, rgba(0,128,128,0) 0%, rgba(23,118,196,0) 48%, rgba(23,117,198,1) 50%, rgba(43,110,255,1) 89%, rgba(41,77,255,1) 100%) center top/60px 60px;
+  z-index: 100;
 }
