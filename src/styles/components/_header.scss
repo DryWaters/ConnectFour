@@ -4,15 +4,43 @@
 
 .header__content {
   align-items: center;
-  display: flex;
-  justify-content: space-between;
   padding: $s-size 0;
+  position: relative;
 }
 
 .header__title {
+  font-family: 'Fontdiner Swanky', cursive;
   color: white;
   text-decoration: none;
+  text-align: center;
   h1 {
     margin: 0;
+    font-size: $xl-size;
+    text-shadow: -1px -1px 0 #000, 0px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 0px 1px 0 #000, 1px 1px 0 #000;
+    z-index: 200;
+    position: relative;
   }
+}
+
+.header__chip {
+  position: absolute;
+  box-sizing: border-box;
+  width: 60px;
+  height: 60px;
+  z-index: 100;
+
+}
+
+.header__chip__yellow {
+  @extend .header__chip;
+  left: 330px;
+  top: 20px;
+  background: radial-gradient(ellipse at center, rgba(255,255,0,1) 0%, rgba(255,255,0,1) 51%, rgba(133,133,0,1) 53%, rgba(133,133,0,1) 56%, rgba(255,255,0,1) 57%, rgba(255,255,0,1) 68%, rgba(133,133,0,1) 70%, rgba(133,133,0,0) 71%);
+}
+
+.header__chip__red {
+  @extend .header__chip;
+  left: 370px;
+  top: 20px;
+  background: radial-gradient(ellipse at center, rgba(255,0,0,1) 0%, rgba(255,0,0,1) 51%, rgba(128,0,0,1) 53%, rgba(128,0,0,1) 56%, rgba(255,0,0,1) 57%, rgba(255,0,0,1) 68%, rgba(128,0,0,1) 70%, rgba(128,0,0,0) 71%);
 }

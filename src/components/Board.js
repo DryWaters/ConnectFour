@@ -1,50 +1,27 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { addChip } from '../actions/game';
-import { Rect, Stage, Layer } from 'react-konva';
+import React from 'react';
 import Chip from './Chip';
 
-class Board extends Component {
+const Board = () => (
 
-  constructor(props) {
-    super(props);
-  }
+  <div className="board">
+    <Chip classes="chip chip--red loc-0-0" />
+    <Chip classes="chip chip--yellow loc-0-1" />
+    <Chip classes="chip chip--red loc-0-2" />
+    <Chip classes="chip chip--yellow loc-0-3" />
+    <Chip classes="chip chip--red loc-0-4" />
+    <Chip classes="chip chip--yellow loc-0-5" />
+    <Chip classes="chip chip--red loc-1-0" />
+    <Chip classes="chip chip--yellow loc-1-1" />
+    <Chip classes="chip chip--red loc-1-2" />
+    <Chip classes="chip chip--yellow loc-1-3" />
+    <Chip classes="chip chip--red loc-1-4" />
+    <Chip classes="chip chip--yellow loc-1-5" />
+    <Chip classes="chip chip--red loc-2-0" />
+    <Chip classes="chip chip--yellow loc-2-1" />
+    <Chip classes="chip chip--red loc-2-2" />
+    <Chip classes="chip chip--yellow loc-2-3" />
+  </div>
 
-  render() {
-    return (
-      <Stage width={window.innerWidth} height={window.innerHeight}>
-        <Layer>
-        <Rect
-        x={0}
-        y={50}
-        width={500}
-        height={500}
-        fill='brown'
-      />
-          {this.props.chips.map((row, rowIndex) => {
-            return row.map((col, colIndex) => {
-              return <Chip 
-                key={rowIndex + " " + colIndex} 
-                value={col} 
-                player={col}
-                x={colIndex * 50+25}
-                y={rowIndex * -50+525}
-                onClick={(e) => this.props.addChip(colIndex, e)}/>
-              });
-            })}
-        </Layer>
-      </Stage>
-    )
-  }
-  
-};
+);
 
-const mapStateToProps = (state) => ({
-  chips: state.game.chips
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  addChip: (col, e) => dispatch(addChip(col))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Board);
+export default Board;

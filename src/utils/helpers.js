@@ -1,6 +1,6 @@
 import { HEIGHT, WIDTH } from './constants';
 
-export generateBoard = (HEIGHT, WIDTH) => {
+export const generateBoard = (HEIGHT, WIDTH) => {
   const arr = [];
   for (let i = 0; i < HEIGHT; i++) {
     arr[i] = [];

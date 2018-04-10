@@ -1,0 +1,15 @@
+.chip {
+  position: absolute;
+  box-sizing: border-box;
+  width: 42px;
+  height: 42px;
+  z-index: 100;
+}
+
+.chip--red {
+  background: radial-gradient(ellipse at center, rgba(255,0,0,1) 0%, rgba(255,0,0,1) 51%, rgba(128,0,0,1) 53%, rgba(128,0,0,1) 56%, rgba(255,0,0,1) 57%, rgba(255,0,0,1) 68%, rgba(128,0,0,1) 70%, rgba(128,0,0,0) 71%);
+}
+
+.chip--yellow {
+  background: radial-gradient(ellipse at center, rgba(255,255,0,1) 0%, rgba(255,255,0,1) 51%, rgba(133,133,0,1) 53%, rgba(133,133,0,1) 56%, rgba(255,255,0,1) 57%, rgba(255,255,0,1) 68%, rgba(133,133,0,1) 70%, rgba(133,133,0,0) 71%);
+}
