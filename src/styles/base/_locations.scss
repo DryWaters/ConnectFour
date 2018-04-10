@@ -2,7 +2,7 @@
   @for $j from 0 to 6 {
     .loc-#{$i}-#{$j} {
       top: 300px - $j * 60 + 9;
-      left: 0px + $i * 60 + 13;
+      left: 0px + $i * 60 + 11;
     }
   }
 }

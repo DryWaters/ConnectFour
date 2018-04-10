@@ -1,12 +1,14 @@
 import { GAME_ACTIONS } from '../actions/actionTypes';
 import { generateBoard } from '../utils/helpers';
+import { WIDTH, HEIGHT } from '../utils/constants';
 
 const { INIT_GAME, START_GAME, STOP_GAME, ADD_CHIP } = GAME_ACTIONS;
 
 const initialState = {
   status: 'STOP',
   chips: generateBoard(),
-  currentPlayer: 1
+  currentPlayer: 1,
+  chipsPerRow: Array.apply(null, Array(WIDTH)).map(Number.prototype.valueOf, 0)
 };
 
 const addChip = (state, action) => {
@@ -15,7 +17,7 @@ const addChip = (state, action) => {
   let hasChanged = false;
   let newChips = chips.map((row) => {
     return row.map((col, index) => {
-      if (action.column === index && col === 0 && !hasChanged) {
+      if (action.column === index && col === 0 && !hasChanged && state.chipsPerRow[action.column] < HEIGHT) {
         hasChanged = true;
         return state.currentPlayer;
       } else {
@@ -23,11 +25,21 @@ const addChip = (state, action) => {
       }
     })
   });
-  let newPlayer = (currentPlayer === 1 ? 2 : 1);
-  return {
-    ...state,
-    currentPlayer: newPlayer,
-    chips: newChips
+
+  if (hasChanged) {
+    let newChipsPerRow = [...state.chipsPerRow]
+    newChipsPerRow[action.column]++;
+    let newPlayer = (currentPlayer === 1 ? 2 : 1);
+    return {
+      ...state,
+      currentPlayer: newPlayer,
+      chips: newChips,
+      chipsPerRow: newChipsPerRow
+    }
+  } else {
+    return {
+      ...state
+    }
   }
 }
 
